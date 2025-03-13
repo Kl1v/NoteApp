@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj": {}
+    "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj": {
+    "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
-        "projectName": "NoteAppBlazor",
-        "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+        "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Laurenz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
+        "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Laurenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,7 +46,7 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
+            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
@@ -69,9 +69,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

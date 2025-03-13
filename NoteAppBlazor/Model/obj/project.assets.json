@@ -358,6 +358,18 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/_._": {}
+        },
+        "runtime": {
+          "lib/net8.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1407,6 +1419,31 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Tools/8.0.0": {
+      "sha512": "zRdaXiiB1gEA0b+AJTd2+drh78gkEA4HyZ1vqNZrKq4xwW8WwavSiQsoeb1UsIMZkocLMBbhQYWClkZzuTKEgQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/8.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net8.0/_._",
+        "microsoft.entityframeworkcore.tools.8.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-arm64/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
+      ]
+    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "sha512": "3KuSxeHoNYdxVYfg2IRZCThcrlJ1XJqIXkAWikCsbm5C/bCjv7G0WoKDyuR98Q+T607QT2Zl5GsbGRkENcV2yQ==",
       "type": "package",
@@ -2256,7 +2293,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.0"
     ]
   },
@@ -2266,11 +2303,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
-      "projectName": "NoteAppBlazor",
-      "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj",
+      "projectName": "Model",
+      "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Laurenz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
+      "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Laurenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2305,7 +2342,7 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": {
+          "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
@@ -2328,9 +2365,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

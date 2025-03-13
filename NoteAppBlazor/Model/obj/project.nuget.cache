@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AH6xE2QJjHk=",
+  "dgSpecHash": "yvEodqqPtog=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+  "projectFilePath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Laurenz\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
@@ -16,6 +16,7 @@
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0\\microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.0\\microsoft.entityframeworkcore.design.8.0.0.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0\\microsoft.entityframeworkcore.relational.8.0.0.nupkg.sha512",
+    "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.0\\microsoft.entityframeworkcore.tools.8.0.0.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
     "C:\\Users\\Laurenz\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
