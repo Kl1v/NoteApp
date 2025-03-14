@@ -27,7 +27,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

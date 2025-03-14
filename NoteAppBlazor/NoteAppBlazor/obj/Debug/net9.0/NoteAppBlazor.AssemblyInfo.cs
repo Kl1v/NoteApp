@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoteAppBlazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d909a2be5ff4e5d9a23fe73a4e11b42eec1ba01c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d0b77389c1044f46c01b0b4937cc2a6f918233b")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoteAppBlazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoteAppBlazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
