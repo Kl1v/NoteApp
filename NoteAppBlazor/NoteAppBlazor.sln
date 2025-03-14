@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteAppBlazor", "NoteAppBla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7A297684-DFE8-4042-AAF4-037CF3C71918}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{3DB42538-5126-420C-8AD5-2798164B6323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{7A297684-DFE8-4042-AAF4-037CF3C71918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A297684-DFE8-4042-AAF4-037CF3C71918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A297684-DFE8-4042-AAF4-037CF3C71918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB42538-5126-420C-8AD5-2798164B6323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB42538-5126-420C-8AD5-2798164B6323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB42538-5126-420C-8AD5-2798164B6323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB42538-5126-420C-8AD5-2798164B6323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
