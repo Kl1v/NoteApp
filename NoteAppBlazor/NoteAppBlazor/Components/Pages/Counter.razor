@@ -1,20 +1,57 @@
 ﻿@page "/counter"
+@using Domain.Interface
 @rendermode InteractiveServer
+@inject IRepositoryAsync<Post> PostRepositoryAsync
+@inject IRepositoryAsync<User> UserRepositoryAsync
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>Create Post</PageTitle>
 
-<h1>Counter</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Create a New Post</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="_newPost" OnSubmit="CreatePost">
+                        <div class="mb-3">
+                            <label class="form-label">Text</label>
+                            <input type="text" class="form-control" @bind="_newPost.Text" placeholder="Enter your post text">
+                        </div>
 
-<p role="status">Current count: @currentCount</p>
+                        <div class="mb-3">
+                            <label class="form-label">User ID</label>
+                            <input type="number" class="form-control" @bind="_newPost.UserId">
+                        </div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+                        <div class="mb-3">
+                            <label class="form-label">Created At</label>
+                            <input type="datetime-local" class="form-control" @bind="_newPost.CreatedAt">
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-plus-circle"></i> Add Post
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
-    private int currentCount = 0;
+    private Post _newPost = new Post();
 
-    private void IncrementCount()
+    protected async override Task OnInitializedAsync()
     {
-        currentCount++;
+        _newPost.CreatedAt = DateTime.Now;
     }
 
+    protected async Task CreatePost()
+    {
+        await PostRepositoryAsync.CreateAsync(_newPost);
+    }
 }

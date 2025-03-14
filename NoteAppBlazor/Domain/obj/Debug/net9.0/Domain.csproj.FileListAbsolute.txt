@@ -14,3 +14,19 @@ C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Model.pdb
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.AssemblyReference.cache
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.Up2Date
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Domain.dll
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Domain.pdb
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Model.dll
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Model.pdb
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.sourcelink.json
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.Up2Date
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.dll
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.pdb
+C:\Users\User\OneDrive\Creative Cloud Files\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\ref\Domain.dll
