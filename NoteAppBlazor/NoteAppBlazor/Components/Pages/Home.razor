@@ -8,41 +8,24 @@
 <PageTitle>Posts</PageTitle>
 
 <div class="container mt-5">
-    <h1 class="text-center display-3 fw-bold text-primary mb-4">🚀 Community Posts</h1>
+    <h1 class="text-center display-4 fw-bold text-primary">Alle Posts</h1>
 
-    <div class="row g-4 justify-content-center">
+    <div class="row mt-4">
         @foreach (var post in posts)
         {
             var user = users.FirstOrDefault(u => u.Id == post.UserId);
-            <div class="col-md-6 col-lg-4">
-                <div class="card shadow-lg border-0 rounded-4 overflow-hidden bg-light position-relative">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                @user?.Username[0]
-                            </div>
-                            <div>
-                                <h5 class="card-title fw-bold text-dark">@user?.Username</h5>
-                                <h6 class="card-subtitle text-muted">📅 @post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
-                            </div>
-                        </div>
-                        <p class="card-text text-dark border rounded p-3 bg-white shadow-sm">📝 @post.Text</p>
-                    </div>
-                    <div class="position-absolute top-0 end-0 mt-3 me-3">
-                        <span class="badge bg-success fs-6">🔥 Trending</span>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@user?.Username</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
+                        <p class="card-text">@post.Text</p>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
-
-<style>
-    .avatar {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-</style>
 
 @code {
     List<User> users = new List<User>();
