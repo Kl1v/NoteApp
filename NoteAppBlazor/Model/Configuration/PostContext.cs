@@ -2,9 +2,9 @@
 
 namespace Model.Configuration;
 
-public class NoteContext : DbContext
+public class PostContext : DbContext
 {
-    public NoteContext(DbContextOptions<NoteContext> options)
+    public PostContext(DbContextOptions<PostContext> options)
         : base(options) { }
 
     public DbSet<User> Users { get; set; }

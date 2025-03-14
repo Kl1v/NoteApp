@@ -5,12 +5,12 @@ using Model.Configuration;
 
 namespace Domain.Repositories;
 
-public abstract class ARepositoryAsyncAsync<TEntity> : IRepositoryAsync<TEntity> where TEntity : class
+public abstract class ARepositoryAsync<TEntity> : IRepositoryAsync<TEntity> where TEntity : class
 {
-    protected NoteContext _context;
+    protected PostContext _context;
     protected DbSet<TEntity> _table;
 
-    public ARepositoryAsyncAsync(NoteContext context)
+    public ARepositoryAsync(PostContext context)
     {
         _context = context;
         _table = _context.Set<TEntity>();

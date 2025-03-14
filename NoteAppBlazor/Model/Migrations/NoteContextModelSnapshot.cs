@@ -9,7 +9,7 @@ using Model.Configuration;
 
 namespace Model.Migrations
 {
-    [DbContext(typeof(NoteContext))]
+    [DbContext(typeof(PostContext))]
     partial class NoteContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -1,3 +1,5 @@
+using Domain.Interface;
+using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Model.Configuration;
 using NoteAppBlazor.Components;
@@ -10,13 +12,12 @@ builder.Services.AddRazorComponents()
 
 
 
-builder.Services.AddDbContext<NoteContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+builder.Services.AddDbContextFactory<PostContext>(
+    options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 36))));
 
-
-
+builder.Services.AddTransient<IRepositoryAsync<User>, UserRepositoryAsync>();
+builder.Services.AddTransient<IRepositoryAsync<Post>, PostRepositoryAsync>();
 
 
 var app = builder.Build();

@@ -10,7 +10,7 @@ using Model.Configuration;
 
 namespace Model.Migrations
 {
-    [DbContext(typeof(NoteContext))]
+    [DbContext(typeof(PostContext))]
     [Migration("20250314094455_INIT")]
     partial class INIT
     {

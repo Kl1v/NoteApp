@@ -487,6 +487,9 @@
       },
       "System.Threading.Channels/6.0.0": {},
       "Domain/1.0.0": {
+        "dependencies": {
+          "Model": "1.0.0"
+        },
         "runtime": {
           "Domain.dll": {
             "assemblyVersion": "1.0.0.0",

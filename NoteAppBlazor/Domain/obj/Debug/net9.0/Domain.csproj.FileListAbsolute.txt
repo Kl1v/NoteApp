@@ -10,3 +10,7 @@ C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\refint\Domain.dll
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.pdb
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\ref\Domain.dll
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Model.dll
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\bin\Debug\net9.0\Model.pdb
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\Domain\obj\Debug\net9.0\Domain.csproj.Up2Date
