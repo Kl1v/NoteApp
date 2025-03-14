@@ -5,27 +5,27 @@
 @inject IRepositoryAsync<Post> PostRepositoryAsync
 @inject IRepositoryAsync<User> UserRepositoryAsync
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Posts</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<h3>Users</h3>
-<ul>
-    @foreach (var user in users)
-    {
-        <li>@user.Username - @user.Email</li>
-    }
-</ul>
-
-<h3>Posts</h3>
-<ul>
-    @foreach (var post in posts)
-    {
-        <li>@post.UserId - @post.Text</li>
-    }
-</ul>
+<div class="container mt-4">
+    <h1 class="text-center display-4 fw-bold text-primary">📢 Alle Posts</h1>
+    
+    <div class="row mt-4 justify-content-center">
+        @foreach (var post in posts)
+        {
+            var user = users.FirstOrDefault(u => u.Id == post.UserId);
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold text-dark">👤 @user?.Username</h5>
+                        <h6 class="card-subtitle mb-3 text-muted">📅 @post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
+                        <p class="card-text text-secondary">📝 @post.Text</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
 @code {
     List<User> users = new List<User>();
