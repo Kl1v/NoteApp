@@ -152,3 +152,7 @@ C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debu
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\NoteAppBlazor.pdb
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\NoteAppBlazor.genruntimeconfig.cache
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\ref\NoteAppBlazor.dll
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\bin\Debug\net9.0\Model.dll
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\bin\Debug\net9.0\Model.pdb
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\bin\Debug\net9.0\Domain.dll
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\bin\Debug\net9.0\Domain.pdb
