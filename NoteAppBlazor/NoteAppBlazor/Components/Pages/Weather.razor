@@ -1,67 +1,97 @@
 ﻿@page "/weather"
-@attribute [StreamRendering]
 
-<PageTitle>Weather</PageTitle>
+@using Microsoft.AspNetCore.Components.Forms
 
-<h1>Weather</h1>
+<PageTitle>Login</PageTitle>
 
-<p>This component demonstrates showing data.</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px; border-radius: 15px;">
+        <h2 class="text-center text-primary mb-4">🔐 Login</h2>
 
-@if (forecasts == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else
-{
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th aria-label="Temperature in Celsius">Temp. (C)</th>
-            <th aria-label="Temperature in Farenheit">Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var forecast in forecasts)
-        {
-            <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
+        <EditForm Model="loginModel" OnValidSubmit="HandleLogin" FormName="LoginForm">
+            <DataAnnotationsValidator />
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold">📧 Email</label>
+                <InputText id="email" class="form-control" placeholder="Gib deine Email ein" @bind-Value="loginModel.Email" />
+                <ValidationMessage For="() => loginModel.Email" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label fw-bold">🔑 Passwort</label>
+                <InputText id="password" type="password" class="form-control" placeholder="********" @bind-Value="loginModel.Password" />
+                <ValidationMessage For="() => loginModel.Password" class="text-danger" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">🚀 Anmelden</button>
+        </EditForm>
+
+        <div class="text-center mt-3">
+            <p>Noch keinen Account? <a href="/register" class="text-decoration-none text-primary fw-bold">Jetzt registrieren</a></p>
+        </div>
+    </div>
+</div>
+
+@page "/register"
+
+<PageTitle>Registrieren</PageTitle>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px; border-radius: 15px;">
+        <h2 class="text-center text-success mb-4">📝 Registrieren</h2>
+
+        <EditForm Model="registerModel" OnValidSubmit="HandleRegister" FormName="RegisterForm">
+            <DataAnnotationsValidator />
+            <div class="mb-3">
+                <label for="username" class="form-label fw-bold">👤 Benutzername</label>
+                <InputText id="username" class="form-control" placeholder="Wähle einen Benutzernamen" @bind-Value="registerModel.Username" />
+                <ValidationMessage For="() => registerModel.Username" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold">📧 Email</label>
+                <InputText id="email" class="form-control" placeholder="Gib deine Email ein" @bind-Value="registerModel.Email" />
+                <ValidationMessage For="() => registerModel.Email" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label fw-bold">🔑 Passwort</label>
+                <InputText id="password" type="password" class="form-control" placeholder="********" @bind-Value="registerModel.Password" />
+                <ValidationMessage For="() => registerModel.Password" class="text-danger" />
+            </div>
+            <button type="submit" class="btn btn-success w-100">✅ Registrieren</button>
+        </EditForm>
+
+        <div class="text-center mt-3">
+            <p>Schon einen Account? <a href="/login" class="text-decoration-none text-success fw-bold">Jetzt einloggen</a></p>
+        </div>
+    </div>
+</div>
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private LoginModel loginModel = new LoginModel();
+    private RegisterModel registerModel = new RegisterModel();
 
-    protected override async Task OnInitializedAsync()
+    private async Task HandleLogin()
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+        // Authentifizierungslösung hier einfügen
+        Console.WriteLine($"Login mit {loginModel.Email}");
     }
 
-    private class WeatherForecast
+    private async Task HandleRegister()
     {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        // Registrierungslösung hier einfügen
+        Console.WriteLine($"Registrierung für {registerModel.Email}");
     }
 
+    private class LoginModel
+    {
+        public string Email { get; set; } = string.Empty;
+        
+        public string Password { get; set; } = string.Empty;
+    }
+
+    private class RegisterModel
+    {
+        public string Username { get; set; } = string.Empty;
+        
+        public string Email { get; set; } = string.Empty;
+        
+        public string Password { get; set; } = string.Empty;
+    }
 }
