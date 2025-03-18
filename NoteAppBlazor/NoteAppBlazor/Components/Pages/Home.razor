@@ -4,6 +4,7 @@
 @inject IJSRuntime JS
 @inject IRepositoryAsync<Post> PostRepositoryAsync
 @inject IRepositoryAsync<User> UserRepositoryAsync
+@rendermode InteractiveServer
 
 <PageTitle>Posts</PageTitle>
 
@@ -21,7 +22,7 @@
                         <p class="card-text">@post.Text</p>
                     </div>
                     <div>
-                        <button class="btn btn-danger" @onclick="async () => await DeletePost()">Delete</button>
+                        <button class="btn btn-danger" @onclick="() => DeletePost(post)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -32,7 +33,6 @@
 @code {
     List<User> users = new List<User>();
     List<Post> posts = new List<Post>();
-    Post post = new Post();
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,8 +40,10 @@
         posts = await PostRepositoryAsync.ReadAllAsync();
     }
 
-    private async Task DeletePost()
+    private async Task DeletePost(Post current)
     {
-        await PostRepositoryAsync.DeleteAsync(post);
+        await PostRepositoryAsync.DeleteAsync(current);
+        posts.Remove(current);
+        StateHasChanged();
     }
 }
