@@ -1,8 +1,10 @@
 ﻿@page "/counter"
 @using Domain.Interface
+@using Model.Entities
 @rendermode InteractiveServer
 @inject IRepositoryAsync<Post> PostRepositoryAsync
 @inject IRepositoryAsync<User> UserRepositoryAsync
+@inject LogInState LogInState
 
 <PageTitle>Create Post</PageTitle>
 
@@ -20,10 +22,13 @@
                             <input type="text" class="form-control" @bind="_newPost.Text" placeholder="Enter your post text">
                         </div>
 
+                        <!-- Entferne das UserId-Feld, da es automatisch gesetzt wird -->
+                        <!--
                         <div class="mb-3">
                             <label class="form-label">User ID</label>
                             <input type="number" class="form-control" @bind="_newPost.UserId">
                         </div>
+                        -->
 
                         <div class="mb-3">
                             <label class="form-label">Created At</label>
@@ -47,11 +52,25 @@
 
     protected async override Task OnInitializedAsync()
     {
+        // Setze das Erstellungsdatum auf das aktuelle Datum
         _newPost.CreatedAt = DateTime.Now;
+
+        // Setze die UserId des Posts mit der ID des aktuell eingeloggten Benutzers
+        if (LogInState.CurrentSession != null)
+        {
+            _newPost.UserId = LogInState.CurrentSession.Id;  // Setzt die UserId aus der Session
+        }
+        else
+        {
+            // Handle den Fall, wenn kein Benutzer eingeloggt ist
+            // Du kannst hier optional eine Fehlermeldung setzen oder den Benutzer zur Login-Seite weiterleiten
+            // Navigation.NavigateTo("/login");
+        }
     }
 
     protected async Task CreatePost()
     {
+        // FÃ¼ge den Post hinzu
         await PostRepositoryAsync.CreateAsync(_newPost);
     }
 }
