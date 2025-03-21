@@ -1,41 +1,62 @@
 ﻿@page "/"
 @using Domain.Interface
 @using Domain.Repositories
+@using Model.Entities
 @inject IJSRuntime JS
 @inject IRepositoryAsync<Post> PostRepositoryAsync
 @inject IRepositoryAsync<User> UserRepositoryAsync
+@inject LogInState LoginState
+@inject NavigationManager NavManager
 @rendermode InteractiveServer
 
 <PageTitle>Posts</PageTitle>
 
-<div class="row mt-4">
-    <h1 class="text-center display-4 fw-bold text-primary">Alle Posts</h1>
-    @foreach (var post in posts)
-    {
-        var user = users.FirstOrDefault(u => u.Id == post.UserId);
-        <div class="col-md-6 mb-4">
-            <div class="card shadow border-0">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5 class="card-title fw-bold">@user?.Username</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
-                        <p class="card-text">@post.Text</p>
-                    </div>
-                    <div>
-                        <button class="btn btn-danger" @onclick="() => DeletePost(post)">Delete</button>
+@if (LoginState?.CurrentSession == null)
+{
+    <p>Umleitung...</p>
+}
+else
+{
+    <div class="row mt-4">
+        <h1 class="text-center display-4 fw-bold text-primary">Meine Posts</h1>
+        @foreach (var post in posts)
+        {
+            if (LoginState.CurrentSession.Id == post.UserId)
+            {
+                var user = users.FirstOrDefault(u => u.Id == post.UserId);
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow border-0">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title fw-bold">@user?.Username</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
+                                <p class="card-text">@post.Text</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-danger" @onclick="() => DeletePost(post)">Delete</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    }
-</div>
+            }
+        }
+    </div>
+}
 
 @code {
-    List<User> users = new List<User>();
-    List<Post> posts = new List<Post>();
+    List<User> users = new();
+    List<Post> posts = new();
 
     protected override async Task OnInitializedAsync()
     {
+        // Prüfe, ob der Nutzer eingeloggt ist
+        if (LoginState?.CurrentSession == null)
+        {
+            NavManager.NavigateTo("/weather", forceLoad: true);
+            return;
+        }
+
+        // Falls der User existiert, lade die Daten
         users = await UserRepositoryAsync.ReadAllAsync();
         posts = await PostRepositoryAsync.ReadAllAsync();
     }
