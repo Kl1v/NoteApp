@@ -1,97 +1,76 @@
 ﻿@page "/weather"
-
-@using Microsoft.AspNetCore.Components.Forms
+@using Domain.Repositories
+@using Model.Entities
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject UserRepositoryAsync UserRepositoryAsync
+@inject LogInState LogInState
 
 <PageTitle>Login</PageTitle>
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 400px; border-radius: 15px;">
-        <h2 class="text-center text-primary mb-4">🔐 Login</h2>
+        <h2 class="text-center text-primary mb-4">Login</h2>
 
-        <EditForm Model="loginModel" OnValidSubmit="HandleLogin" FormName="LoginForm">
+        <EditForm Model="loginModel" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
             <DataAnnotationsValidator />
             <div class="mb-3">
-                <label for="email" class="form-label fw-bold">📧 Email</label>
+                <label for="email" class="form-label fw-bold">Email</label>
                 <InputText id="email" class="form-control" placeholder="Gib deine Email ein" @bind-Value="loginModel.Email" />
                 <ValidationMessage For="() => loginModel.Email" class="text-danger" />
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label fw-bold">🔑 Passwort</label>
+                <label for="password" class="form-label fw-bold">Passwort</label>
                 <InputText id="password" type="password" class="form-control" placeholder="********" @bind-Value="loginModel.Password" />
                 <ValidationMessage For="() => loginModel.Password" class="text-danger" />
             </div>
-            <button type="submit" class="btn btn-primary w-100">🚀 Anmelden</button>
+            <button type="submit" class="btn btn-primary w-100">Anmelden</button>
         </EditForm>
 
-        <div class="text-center mt-3">
-            <p>Noch keinen Account? <a href="/register" class="text-decoration-none text-primary fw-bold">Jetzt registrieren</a></p>
-        </div>
-    </div>
-</div>
-
-@page "/register"
-
-<PageTitle>Registrieren</PageTitle>
-
-<div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-lg" style="width: 400px; border-radius: 15px;">
-        <h2 class="text-center text-success mb-4">📝 Registrieren</h2>
-
-        <EditForm Model="registerModel" OnValidSubmit="HandleRegister" FormName="RegisterForm">
-            <DataAnnotationsValidator />
-            <div class="mb-3">
-                <label for="username" class="form-label fw-bold">👤 Benutzername</label>
-                <InputText id="username" class="form-control" placeholder="Wähle einen Benutzernamen" @bind-Value="registerModel.Username" />
-                <ValidationMessage For="() => registerModel.Username" class="text-danger" />
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label fw-bold">📧 Email</label>
-                <InputText id="email" class="form-control" placeholder="Gib deine Email ein" @bind-Value="registerModel.Email" />
-                <ValidationMessage For="() => registerModel.Email" class="text-danger" />
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label fw-bold">🔑 Passwort</label>
-                <InputText id="password" type="password" class="form-control" placeholder="********" @bind-Value="registerModel.Password" />
-                <ValidationMessage For="() => registerModel.Password" class="text-danger" />
-            </div>
-            <button type="submit" class="btn btn-success w-100">✅ Registrieren</button>
-        </EditForm>
-
-        <div class="text-center mt-3">
-            <p>Schon einen Account? <a href="/login" class="text-decoration-none text-success fw-bold">Jetzt einloggen</a></p>
-        </div>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="alert alert-danger mt-3">@errorMessage</div>
+        }
     </div>
 </div>
 
 @code {
-    private LoginModel loginModel = new LoginModel();
-    private RegisterModel registerModel = new RegisterModel();
+    private LogIn loginModel = new LogIn();
 
-    private async Task HandleLogin()
+    private string errorMessage = string.Empty;
+
+    
+
+    private async Task HandleValidSubmit()
     {
-        // Authentifizierungslösung hier einfügen
-        Console.WriteLine($"Login mit {loginModel.Email}");
+        var user = await UserRepositoryAsync.FindByEmailAsync(loginModel.Email);
+
+        if (user == null)
+        {
+            errorMessage = $"Benutzer nicht gefunden. {loginModel.Email}"; 
+            return;
+        }
+
+        if (user.PasswordHash != loginModel.Password)
+        {
+            errorMessage = "Falsches Passwort.";
+            return;
+        }
+        
+        LogIn session = new LogIn
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email
+        };
+        LogInState.SetSession(session); 
+        Console.WriteLine("----------------------------------------------");
+        Console.WriteLine($"Benutzer angemeldet: {user.Email}");
+        Navigation.NavigateTo("/");
     }
 
-    private async Task HandleRegister()
+    private bool VerifyPassword(string enteredPassword, string storedHash)
     {
-        // Registrierungslösung hier einfügen
-        Console.WriteLine($"Registrierung für {registerModel.Email}");
-    }
-
-    private class LoginModel
-    {
-        public string Email { get; set; } = string.Empty;
-        
-        public string Password { get; set; } = string.Empty;
-    }
-
-    private class RegisterModel
-    {
-        public string Username { get; set; } = string.Empty;
-        
-        public string Email { get; set; } = string.Empty;
-        
-        public string Password { get; set; } = string.Empty;
+        return enteredPassword == storedHash; 
     }
 }

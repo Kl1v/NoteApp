@@ -2,6 +2,7 @@ using Domain.Interface;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Model.Configuration;
+using Model.Entities;
 using NoteAppBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,9 @@ builder.Services.AddDbContextFactory<PostContext>(
 
 builder.Services.AddTransient<IRepositoryAsync<User>, UserRepositoryAsync>();
 builder.Services.AddTransient<IRepositoryAsync<Post>, PostRepositoryAsync>();
+builder.Services.AddScoped<UserRepositoryAsync>();
+builder.Services.AddSingleton<LogInState>();
+
 
 
 var app = builder.Build();
