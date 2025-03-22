@@ -1,4 +1,4 @@
-﻿@page "/weather"
+﻿@page "/login"
 @using Domain.Repositories
 @using Model.Entities
 @rendermode InteractiveServer
@@ -8,8 +8,8 @@
 
 <PageTitle>Login</PageTitle>
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-lg" style="width: 400px; border-radius: 15px;">
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow-lg" style="width: 30vw; border-radius: 15px;">
         <h2 class="text-center text-primary mb-4">Login</h2>
 
         <EditForm Model="loginModel" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
@@ -25,6 +25,9 @@
                 <ValidationMessage For="() => loginModel.Password" class="text-danger" />
             </div>
             <button type="submit" class="btn btn-primary w-100">Anmelden</button>
+            <div class="mt-3 text-center">
+                <a href="/register">Noch kein Konto? Jetzt registrieren</a>
+            </div>
         </EditForm>
 
         @if (!string.IsNullOrEmpty(errorMessage))

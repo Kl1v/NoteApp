@@ -8,13 +8,15 @@ public class User
     [Key]
     public int Id { get; set; }
 
-    [Required]
-    [StringLength(50)]
-    public string Username { get; set; }
+    [Required(ErrorMessage = "Benutzername ist erforderlich.")]
+    [RegularExpression(@"^[a-zA-Z0-9_-]+$", ErrorMessage = "Benutzername darf nur Buchstaben, Zahlen, '_' oder '-' enthalten.")]
+    [StringLength(20, ErrorMessage = "Benutzername darf maximal 20 Zeichen lang sein.")]
+    public string Username { get; set; } = string.Empty;
 
-    [Required]
-    [StringLength(100)]
-    public string Email { get; set; }
+
+    [Required(ErrorMessage = "Email ist erforderlich.")]
+    [EmailAddress(ErrorMessage = "Ungültige Email-Adresse.")]
+    public string Email { get; set; } = String.Empty;
 
     [Required]
     [StringLength(255)]

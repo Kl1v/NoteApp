@@ -10,7 +10,8 @@ public class Post
     [Required]
     public int UserId { get; set; } // Fremdschlüssel zu User
 
-    [Required]
+    [Required(ErrorMessage = "Dieses Feld darf nicht leer sein.")]
+    [StringLength(500, ErrorMessage = "Dieses Feld darf nicht mehr als 500 Zeichen enthalten.")]
     public string Text { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

@@ -52,7 +52,7 @@ else
         // Prüfe, ob der Nutzer eingeloggt ist
         if (LoginState?.CurrentSession == null)
         {
-            NavManager.NavigateTo("/weather", forceLoad: true);
+            NavManager.NavigateTo("/login", forceLoad: true);
             return;
         }
 
