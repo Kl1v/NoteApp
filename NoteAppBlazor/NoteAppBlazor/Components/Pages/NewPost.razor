@@ -31,11 +31,12 @@ else
                                 <input type="text" class="form-control" @bind="_newPost.Text" placeholder="Enter your post text">
                                 <ValidationMessage For="() => _newPost.Text" class="text-danger"/>
                             </div>
-
+<!--
                             <div class="mb-3">
                                 <label class="form-label">Created At</label>
                                 <input type="datetime-local" class="form-control" @bind="_newPost.CreatedAt">
                             </div>
+-->
 
                             <div class="text-end">
                                 <button type="submit" class="btn btn-primary">
@@ -79,6 +80,7 @@ else
         if (LoginState.CurrentSession != null)
         {
             _newPost.UserId = LoginState.CurrentSession.Id;  // Setzt die UserId aus der Session
+            _newPost.CreatedAt = DateTime.Now;
         }
         else
         {

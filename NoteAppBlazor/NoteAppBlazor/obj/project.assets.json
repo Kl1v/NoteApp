@@ -2299,35 +2299,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Laurenz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
       "projectName": "NoteAppBlazor",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
+      "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+      "packagesPath": "C:\\Users\\Laurenz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Laurenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj"
+            "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\User\\OneDrive\\Creative Cloud Files\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj"
+            "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj"
             }
           }
         }
@@ -2340,9 +2342,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -2378,40 +2380,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Laurenz\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    }
-  ]
+  }
 }
