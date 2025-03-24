@@ -19,4 +19,7 @@ public class Post
     // Navigation Property für den Benutzer
     [ForeignKey("UserId")]
     public User User { get; set; }
+
+    [Required]
+    public bool IsFavorite { get; set; } = false;
 }

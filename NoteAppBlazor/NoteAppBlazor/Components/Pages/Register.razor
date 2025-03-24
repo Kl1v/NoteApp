@@ -69,6 +69,6 @@
         await UserRepositoryAsync.CreateAsync(registerModel);
 
         Console.WriteLine($"Neuer Benutzer registriert: {registerModel.Email}");
-        Navigation.NavigateTo("/weather"); // Nach Registrierung zum Login weiterleiten
+        Navigation.NavigateTo("/login"); // Nach Registrierung zum Login weiterleiten
     }
 }

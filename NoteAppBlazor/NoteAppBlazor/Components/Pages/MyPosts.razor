@@ -19,7 +19,24 @@ else
 {
     <div class="row mt-4">
         <h1 class="text-center display-4 fw-bold text-primary">Meine Posts</h1>
-        @foreach (var post in posts)
+
+        <!-- Suchleiste mit Icon -->
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <div class="input-group shadow-sm" style="max-width: 500px;">
+                <span class="input-group-text bg-white border-0">
+                    <i class="bi bi-search text-primary"></i> <!-- Bootstrap Such-Icon -->
+                </span>
+                <input type="text" class="form-control border-0 shadow-sm" 
+                       placeholder="Suche nach Titel..." 
+                       @bind="searchQuery" @bind:event="oninput"
+                       style="border-radius: 25px;">
+            </div>
+        </div>
+
+        @foreach (var post in posts
+            .Where(p => string.IsNullOrWhiteSpace(searchQuery) || p.Text.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+            .OrderByDescending(p => p.IsFavorite)
+            .ThenByDescending(p => p.CreatedAt))
         {
             if (LoginState.CurrentSession.Id == post.UserId)
             {
@@ -32,8 +49,21 @@ else
                                 <h6 class="card-subtitle mb-2 text-muted">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
                                 <p class="card-text">@post.Text</p>
                             </div>
-                            <div>
-                                <button class="btn btn-danger" @onclick="() => DeletePost(post)">Delete</button>
+                            <div class="d-flex align-items-center">
+                                <!-- Favoriten-Stern -->
+                                <button class="btn btn-link fs-4" @onclick="() => ToggleFavorite(post)">
+                                    @if (post.IsFavorite)
+                                    {
+                                        <span style="color: gold;">★</span> <!-- Gefüllter gelber Stern -->
+                                    }
+                                    else
+                                    {
+                                        <span style="color: gray;">☆</span> <!-- Leerer grauer Stern -->
+                                    }
+                                </button>
+                                
+                                <!-- Löschen-Button -->
+                                <button class="btn btn-danger ms-2" @onclick="() => DeletePost(post)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -46,6 +76,7 @@ else
 @code {
     List<User> users = new();
     List<Post> posts = new();
+    string searchQuery = ""; // Suchfeld
 
     protected override async Task OnInitializedAsync()
     {
@@ -65,6 +96,14 @@ else
     {
         await PostRepositoryAsync.DeleteAsync(current);
         posts.Remove(current);
+        StateHasChanged();
+    }
+
+    private async Task ToggleFavorite(Post post)
+    {
+        post.IsFavorite = !post.IsFavorite; // Favoriten-Status umschalten
+        await PostRepositoryAsync.UpdateAsync(post); // In der Datenbank speichern
+        posts = posts.OrderByDescending(p => p.IsFavorite).ThenByDescending(p => p.CreatedAt).ToList(); // Favoriten nach oben sortieren
         StateHasChanged();
     }
 }
