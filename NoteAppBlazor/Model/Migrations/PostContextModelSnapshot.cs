@@ -25,7 +25,14 @@ namespace Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime(6)");
 
                     b.Property<bool>("IsFavorite")

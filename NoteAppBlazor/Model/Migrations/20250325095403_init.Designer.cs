@@ -11,8 +11,8 @@ using Model.Configuration;
 namespace Model.Migrations
 {
     [DbContext(typeof(PostContext))]
-    [Migration("20250324124500_initalcreate")]
-    partial class initalcreate
+    [Migration("20250325095403_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,14 @@ namespace Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime(6)");
 
                     b.Property<bool>("IsFavorite")

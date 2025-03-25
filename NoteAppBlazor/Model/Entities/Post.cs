@@ -22,4 +22,10 @@ public class Post
 
     [Required]
     public bool IsFavorite { get; set; } = false;
+    
+    [Required]
+    public string Category { get; set; } = string.Empty;
+    
+    
+    public DateTime Deadline { get; set; }
 }

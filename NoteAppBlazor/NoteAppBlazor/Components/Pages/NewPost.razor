@@ -31,12 +31,24 @@ else
                                 <input type="text" class="form-control" @bind="_newPost.Text" placeholder="Enter your post text">
                                 <ValidationMessage For="() => _newPost.Text" class="text-danger"/>
                             </div>
-<!--
+
                             <div class="mb-3">
-                                <label class="form-label">Created At</label>
-                                <input type="datetime-local" class="form-control" @bind="_newPost.CreatedAt">
+                                <label class="form-label">Category</label>
+                                <select class="form-control" @bind="_newPost.Category">
+                                    <option value="Task">Task</option>
+                                    <option value="Note">Note</option>
+                                    <option value="Reminder">Reminder</option>
+                                    <option value="Appointment">Appointment</option>
+                                </select>
                             </div>
--->
+
+                            @if (_newPost.Category == "Task" || _newPost.Category == "Reminder" || _newPost.Category == "Appointment")
+                            {
+                                <div class="mb-3">
+                                    <label class="form-label">@(_newPost.Category == "Task" ? "Deadline" : "Date")</label>
+                                    <input type="datetime-local" class="form-control" @bind="_newPost.Deadline">
+                                </div>
+                            }
 
                             <div class="text-end">
                                 <button type="submit" class="btn btn-primary">
@@ -66,35 +78,27 @@ else
 @code {
     private Post _newPost = new Post();
     private string errorMessage = string.Empty;
+    private bool isSuccess = false;
 
     protected async override Task OnInitializedAsync()
     {
-        // Prüfe, ob der Nutzer eingeloggt ist
         if (LoginState?.CurrentSession == null)
         {
             Navigation.NavigateTo("/login", forceLoad: true);
             return;
         }
         _newPost.CreatedAt = DateTime.Now;
-        
-        if (LoginState.CurrentSession != null)
-        {
-            _newPost.UserId = LoginState.CurrentSession.Id;  // Setzt die UserId aus der Session
-            _newPost.CreatedAt = DateTime.Now;
-        }
-        else
-        {
-            // Handle den Fall, wenn kein Benutzer eingeloggt ist
-            // Du kannst hier optional eine Fehlermeldung setzen oder den Benutzer zur Login-Seite weiterleiten
-            // Navigation.NavigateTo("/login");
-        }
+        _newPost.UserId = LoginState.CurrentSession.Id;
     }
-    
-    private bool isSuccess = false;
+
     protected async Task CreatePost()
     {
         try
         {
+            if (_newPost.Category == "Note")
+            {
+                
+            }
             await PostRepositoryAsync.CreateAsync(_newPost);
             isSuccess = true;
             StateHasChanged();
