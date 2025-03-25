@@ -28,4 +28,6 @@ public class Post
     
     
     public DateTime Deadline { get; set; }
+    
+    public bool IsEdited { get; set; } = false;
 }

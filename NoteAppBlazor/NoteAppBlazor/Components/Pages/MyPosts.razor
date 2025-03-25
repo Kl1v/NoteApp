@@ -20,11 +20,10 @@ else
     <div class="row mt-4">
         <h1 class="text-center display-4 fw-bold text-primary">Meine Posts</h1>
 
-        <!-- Suchleiste mit Icon -->
         <div class="col-12 mb-3 d-flex justify-content-center">
             <div class="input-group shadow-sm" style="max-width: 500px;">
                 <span class="input-group-text bg-white border-0">
-                    <i class="bi bi-search text-primary"></i> <!-- Bootstrap Such-Icon -->
+                    <i class="bi bi-search text-primary"></i>
                 </span>
                 <input type="text" class="form-control border-0 shadow-sm" 
                        placeholder="Suche nach Titel..." 
@@ -47,23 +46,28 @@ else
                             <div>
                                 <h5 class="card-title fw-bold">@user?.Username</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
-                                <p class="card-text">@post.Text</p>
+                                <p class="card-text">
+                                    @post.Text @(post.IsEdited ? "(Bearbeitet)" : "")
+                                </p>
+                                <p class="card-text text-muted">Kategorie: @post.Category</p>
                             </div>
                             <div class="d-flex align-items-center">
-                                <!-- Favoriten-Stern -->
                                 <button class="btn btn-link fs-4" @onclick="() => ToggleFavorite(post)">
                                     @if (post.IsFavorite)
                                     {
-                                        <span style="color: gold;">★</span> <!-- Gefüllter gelber Stern -->
+                                        <span style="color: gold;">★</span>
                                     }
                                     else
                                     {
-                                        <span style="color: gray;">☆</span> <!-- Leerer grauer Stern -->
+                                        <span style="color: gray;">☆</span>
                                     }
                                 </button>
-                                
-                                <!-- Löschen-Button -->
-                                <button class="btn btn-danger ms-2" @onclick="() => DeletePost(post)">Delete</button>
+                                <button class="btn btn-lg ms-2" @onclick="() => OpenEditModal(post)">
+                                    <i class="bi bi-pencil">✏️</i>
+                                </button>
+                                <button class="btn btn-lg ms-2" @onclick="() => DeletePost(post)">
+                                    <i class="bi bi-trash">🗑️</i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -73,21 +77,42 @@ else
     </div>
 }
 
+@if (isEditModalOpen)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post bearbeiten</h5>
+                    <button type="button" class="btn-close" @onclick="CloseEditModal"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" rows="5" @bind="editPostText"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="CloseEditModal">Abbrechen</button>
+                    <button type="button" class="btn btn-primary" @onclick="SaveEdit">Speichern</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 @code {
     List<User> users = new();
     List<Post> posts = new();
-    string searchQuery = ""; // Suchfeld
+    string searchQuery = "";
+    bool isEditModalOpen = false;
+    Post? editingPost = null;
+    string editPostText = "";
 
     protected override async Task OnInitializedAsync()
     {
-        // Prüfe, ob der Nutzer eingeloggt ist
         if (LoginState?.CurrentSession == null)
         {
             NavManager.NavigateTo("/login", forceLoad: true);
             return;
         }
-
-        // Falls der User existiert, lade die Daten
         users = await UserRepositoryAsync.ReadAllAsync();
         posts = await PostRepositoryAsync.ReadAllAsync();
     }
@@ -101,9 +126,32 @@ else
 
     private async Task ToggleFavorite(Post post)
     {
-        post.IsFavorite = !post.IsFavorite; // Favoriten-Status umschalten
-        await PostRepositoryAsync.UpdateAsync(post); // In der Datenbank speichern
-        posts = posts.OrderByDescending(p => p.IsFavorite).ThenByDescending(p => p.CreatedAt).ToList(); // Favoriten nach oben sortieren
+        post.IsFavorite = !post.IsFavorite;
+        await PostRepositoryAsync.UpdateAsync(post);
+        posts = posts.OrderByDescending(p => p.IsFavorite).ThenByDescending(p => p.CreatedAt).ToList();
         StateHasChanged();
+    }
+
+    private void OpenEditModal(Post post)
+    {
+        editingPost = post;
+        editPostText = post.Text;
+        isEditModalOpen = true;
+    }
+
+    private void CloseEditModal()
+    {
+        isEditModalOpen = false;
+    }
+
+    private async Task SaveEdit()
+    {
+        if (editingPost != null)
+        {
+            editingPost.Text = editPostText;
+            editingPost.IsEdited = true;
+            await PostRepositoryAsync.UpdateAsync(editingPost);
+        }
+        isEditModalOpen = false;
     }
 }
