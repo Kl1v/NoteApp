@@ -8,6 +8,7 @@
 @inject LogInState LoginState
 @inject NavigationManager NavManager
 @rendermode InteractiveServer
+@inject LogInState LogInState
 
 <PageTitle>Posts</PageTitle>
 
@@ -18,6 +19,9 @@
 else
 {
     <div class="row mt-4">
+        <button class="btn btn-danger" style="width: 10%" @onclick="() => Logout()">
+            Logout
+        </button>
         <h1 class="text-center display-4 fw-bold text-primary">Meine Posts</h1>
 
         <div class="col-12 mb-3 d-flex justify-content-center">
@@ -25,17 +29,17 @@ else
                 <span class="input-group-text bg-white border-0">
                     <i class="bi bi-search text-primary"></i>
                 </span>
-                <input type="text" class="form-control border-0 shadow-sm" 
-                       placeholder="Suche nach Titel..." 
+                <input type="text" class="form-control border-0 shadow-sm"
+                       placeholder="Suche nach Titel..."
                        @bind="searchQuery" @bind:event="oninput"
                        style="border-radius: 25px;">
             </div>
         </div>
 
         @foreach (var post in posts
-            .Where(p => string.IsNullOrWhiteSpace(searchQuery) || p.Text.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
-            .OrderByDescending(p => p.IsFavorite)
-            .ThenByDescending(p => p.CreatedAt))
+                      .Where(p => string.IsNullOrWhiteSpace(searchQuery) || p.Text.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+                      .OrderByDescending(p => p.IsFavorite)
+                      .ThenByDescending(p => p.CreatedAt))
         {
             if (LoginState.CurrentSession.Id == post.UserId)
             {
@@ -215,5 +219,12 @@ else
             await PostRepositoryAsync.UpdateAsync(editingPost);
         }
         isEditModalOpen = false;
+    }
+    private async Task Logout()
+    {
+
+        LogInState.ClearSession();
+        Console.WriteLine("Session cleared!");
+        NavManager.NavigateTo("/login"); 
     }
 }

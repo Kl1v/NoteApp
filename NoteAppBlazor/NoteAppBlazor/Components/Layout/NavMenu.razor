@@ -1,4 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Model.Entities
+@inject LogInState LogInState
+@inject NavigationManager NavigationManager
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">NoteAppBlazor</a>
     </div>
@@ -21,3 +24,16 @@
         </div>
     </nav>
 </div>
+
+@code {
+    private async Task Logout()
+    {
+        Console.WriteLine("Logout button clicked!"); 
+        StateHasChanged();
+        await Task.Delay(100); 
+        LogInState.ClearSession();
+        Console.WriteLine("Session cleared!");
+        NavigationManager.NavigateTo("/login"); 
+    }
+
+}
