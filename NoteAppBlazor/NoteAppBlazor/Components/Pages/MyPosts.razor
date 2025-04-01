@@ -8,6 +8,7 @@
 @inject LogInState LoginState
 @inject NavigationManager NavManager
 @rendermode InteractiveServer
+@inject LogInState LogInState
 
 <PageTitle>Posts</PageTitle>
 
@@ -63,6 +64,9 @@
 else
 {
     <div class="row mt-4">
+        <button class="btn btn-danger" style="width: 10%" @onclick="() => Logout()">
+            Logout
+        </button>
         <h1 class="text-center display-4 fw-bold main">Meine Posts</h1>
 
         <div class="col-12 mb-3 d-flex justify-content-center">
@@ -260,5 +264,12 @@ else
             await PostRepositoryAsync.UpdateAsync(editingPost);
         }
         isEditModalOpen = false;
+    }
+    private async Task Logout()
+    {
+ 
+        LogInState.ClearSession();
+        Console.WriteLine("Session cleared!");
+        NavManager.NavigateTo("/login"); 
     }
 }

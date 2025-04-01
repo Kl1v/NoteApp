@@ -90,7 +90,6 @@ C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debu
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\scopedcss\bundle\NoteAppBlazor.styles.css
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\scopedcss\projectbundle\NoteAppBlazor.bundle.scp.css
-C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\vvyolckhgz-khy4lop6wu.gz
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\fw6rr8ajur-t1cqhe9u97.gz
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\egsoin7bnr-c2jlpeoesf.gz
 C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\vghbaukleb-sejl45xvog.gz
@@ -472,3 +471,4 @@ C:\Users\janti\Desktop\SEW\Nodes\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\n
 C:\Users\janti\Desktop\SEW\Nodes\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\NoteAppBlazor.genruntimeconfig.cache
 C:\Users\janti\Desktop\SEW\Nodes\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\ref\NoteAppBlazor.dll
 C:\Users\janti\Desktop\SEW\Nodes\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\vvyolckhgz-hcfyr0asnz.gz
+C:\Users\Laurenz\Desktop\4BHITM\SEW\NoteApp\NoteAppBlazor\NoteAppBlazor\obj\Debug\net9.0\compressed\vvyolckhgz-hcfyr0asnz.gz

@@ -2299,19 +2299,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\janti\\.nuget\\packages\\": {}
+    "C:\\Users\\Laurenz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
       "projectName": "NoteAppBlazor",
-      "projectPath": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
-      "packagesPath": "C:\\Users\\janti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
+      "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\NoteAppBlazor.csproj",
+      "packagesPath": "C:\\Users\\Laurenz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\janti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Laurenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2325,11 +2325,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj"
+            "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj"
+            "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Laurenz\\Desktop\\4BHITM\\SEW\\NoteApp\\NoteAppBlazor\\Model\\Model.csproj"
             }
           }
         }
@@ -2380,7 +2380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Laurenz\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
