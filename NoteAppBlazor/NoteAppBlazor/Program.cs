@@ -20,6 +20,7 @@ builder.Services.AddDbContextFactory<PostContext>(
 builder.Services.AddTransient<IRepositoryAsync<User>, UserRepositoryAsync>();
 builder.Services.AddTransient<IRepositoryAsync<Post>, PostRepositoryAsync>();
 builder.Services.AddScoped<UserRepositoryAsync>();
+builder.Services.AddScoped<LogInState>();
 builder.Services.AddSingleton<LogInState>();
 
 
