@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xwtxBTumveKhj6iQGASKBLMNur+r5mZf+Zu7jyo0Sak=",
+  "Hash": "o2SCkfzzijlwDbu6p4DjZAvkm5cxUz3dkEpJkUlXUSA=",
   "Source": "NoteAppBlazor",
   "BasePath": "_content/NoteAppBlazor",
   "Mode": "Default",
@@ -857,12 +857,12 @@
       "OriginalItemSpec": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-khy4lop6wu.gz",
+      "Identity": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-hcfyr0asnz.gz",
       "SourceId": "NoteAppBlazor",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/NoteAppBlazor",
-      "RelativePath": "app#[.{fingerprint=khy4lop6wu}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=hcfyr0asnz}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -871,8 +871,8 @@
       "RelatedAsset": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "596e5mu3rg",
-      "Integrity": "KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=",
+      "Fingerprint": "1flv8xgqqw",
+      "Integrity": "LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\wwwroot\\app.css"
@@ -1060,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "khy4lop6wu",
-      "Integrity": "aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=",
+      "Fingerprint": "hcfyr0asnz",
+      "Integrity": "z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2015,12 +2015,12 @@
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-khy4lop6wu.gz",
+      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-hcfyr0asnz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.000594177065"
         }
       ],
       "ResponseHeaders": [
@@ -2030,15 +2030,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1682"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2058,13 +2058,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E="
         }
       ]
     },
@@ -2079,7 +2079,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "3177"
         },
         {
           "Name": "Content-Type",
@@ -2087,11 +2087,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2101,13 +2101,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-khy4lop6wu.gz",
+      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-hcfyr0asnz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2116,7 +2116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1682"
         },
         {
           "Name": "Content-Type",
@@ -2124,11 +2124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2146,18 +2146,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
-      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-khy4lop6wu.gz",
+      "Route": "app.hcfyr0asnz.css",
+      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-hcfyr0asnz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.000594177065"
         }
       ],
       "ResponseHeaders": [
@@ -2167,15 +2167,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1682"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2195,13 +2195,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "hcfyr0asnz"
         },
         {
           "Name": "label",
@@ -2209,12 +2209,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
+      "Route": "app.hcfyr0asnz.css",
       "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2224,7 +2224,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "3177"
         },
         {
           "Name": "Content-Type",
@@ -2232,11 +2232,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2246,7 +2246,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "hcfyr0asnz"
         },
         {
           "Name": "label",
@@ -2254,13 +2254,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-z+Iq7ZjS9CuWC54kWr0KGSYtXaWuB+pNbeF/R0IyZ1E="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css.gz",
-      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-khy4lop6wu.gz",
+      "Route": "app.hcfyr0asnz.css.gz",
+      "AssetFile": "C:\\Users\\janti\\Desktop\\SEW\\Nodes\\NoteApp\\NoteAppBlazor\\NoteAppBlazor\\obj\\Debug\\net9.0\\compressed\\vvyolckhgz-hcfyr0asnz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2269,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1682"
         },
         {
           "Name": "Content-Type",
@@ -2277,11 +2277,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 14:34:58 GMT"
+          "Value": "Tue, 01 Apr 2025 09:15:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2299,7 +2299,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "hcfyr0asnz"
         },
         {
           "Name": "label",
@@ -2307,7 +2307,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-LSrwcq9rOmxF/M6xeGRu0Jl8m32gEz+V/GZhJ/YOfO4="
         }
       ]
     },

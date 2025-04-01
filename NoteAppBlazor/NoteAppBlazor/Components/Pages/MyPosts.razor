@@ -11,6 +11,51 @@
 
 <PageTitle>Posts</PageTitle>
 
+<style>
+
+    .main{
+        color: #00ADB5 !important;
+    }
+    .card {
+        background-color: #454b56;
+        color: white;
+    }
+    
+    .card-title, .card-subtitle, .card-text {
+        color: white !important;
+    }
+    
+    .text-muted {
+        color: #adb5bd !important;
+    }
+    
+    .form-control {
+        background-color: #454b56;
+        color: white;
+        border-color: #5a6268;
+    }
+    .input-group-text{
+        background-color: #222831;
+    }
+    
+    .form-control:focus {
+        background-color: #454b56;
+        color: white;
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    .modal-content {
+        background-color: #454b56;
+        color: white;
+    }
+    
+    .btn-close {
+        filter: invert(1);
+    }
+
+</style>
+
 @if (LoginState?.CurrentSession == null)
 {
     <p>Umleitung...</p>
@@ -18,12 +63,12 @@
 else
 {
     <div class="row mt-4">
-        <h1 class="text-center display-4 fw-bold text-primary">Meine Posts</h1>
+        <h1 class="text-center display-4 fw-bold main">Meine Posts</h1>
 
         <div class="col-12 mb-3 d-flex justify-content-center">
             <div class="input-group shadow-sm" style="max-width: 500px;">
-                <span class="input-group-text bg-white border-0">
-                    <i class="bi bi-search text-primary"></i>
+                <span class="input-group-text  border-0">
+                    <i class="bi bi-search text-white"></i>
                 </span>
                 <input type="text" class="form-control border-0 shadow-sm" 
                        placeholder="Suche nach Titel..." 
@@ -47,16 +92,16 @@ else
                                 <!-- Username und Datum in einer Zeile -->
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <h5 class="card-title fw-bold mb-0">@user?.Username</h5>
-                                    <h6 class="card-subtitle text-muted mb-0">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
+                                    <h6 class="card-subtitle mb-0" style="color: #adb5bd;">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</h6>
                                 </div>
 
                                 <p class="card-text">
-                                    @post.Text @(post.IsEdited ? "(Bearbeitet)" : "")
+                                    @post.Text <span style="color: #adb5bd; opacity: 0.7;">@(post.IsEdited ? "(Bearbeitet)" : "")</span>
                                 </p>
 
                                 <!-- Deadline Info in einer Zeile -->
                                 <div class="d-flex flex-column gap-2 mb-2">
-                                    <span class="text-muted">Deadline: @post.Deadline.ToString("dd.MM.yyyy HH:mm")</span>
+                                    <span style="color: #adb5bd;">Deadline: @post.Deadline.ToString("dd.MM.yyyy HH:mm")</span>
 
                                     <div class="d-flex align-items-center gap-2">
                                         @if (post.Deadline != DateTime.MinValue)
@@ -88,7 +133,7 @@ else
 
                                             @if (!string.IsNullOrEmpty(deadlineMessage))
                                             {
-                                                <span class="badge  @bgColor text-dark p-2" style="border-radius: 6px">
+                                                <span class="badge @bgColor text-dark p-2" style="border-radius: 6px">
                                                     @deadlineMessage
                                                 </span>
                                             }
@@ -125,10 +170,10 @@ else
                                     }
                                 </button>
                                 <button class="btn btn-lg ms-2" @onclick="() => OpenEditModal(post)">
-                                    <i class="bi bi-pencil">✏️</i>
+                                    <i class="bi bi-pencil text-white">✏️</i>
                                 </button>
                                 <button class="btn btn-lg ms-2" @onclick="() => DeletePost(post)">
-                                    <i class="bi bi-trash">🗑️</i>
+                                    <i class="bi bi-trash text-white">🗑️</i>
                                 </button>
                             </div>
                         </div>
@@ -149,7 +194,7 @@ else
                     <button type="button" class="btn-close" @onclick="CloseEditModal"></button>
                 </div>
                 <div class="modal-body">
-                    <textarea class="form-control" rows="5" @bind="editPostText"></textarea>
+                    <textarea class="form-control" rows="5" @bind="editPostText" style="background-color: #454b56; color: white;"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @onclick="CloseEditModal">Abbrechen</button>

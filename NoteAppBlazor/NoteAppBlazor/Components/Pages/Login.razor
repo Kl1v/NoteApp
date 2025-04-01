@@ -8,9 +8,43 @@
 
 <PageTitle>Login</PageTitle>
 
+<style>
+    #email{
+        background-color: #EEEEEE;
+    }
+    #password{
+        background-color: #EEEEEE;
+    }
+    .text-teal {
+        color: #00ADB5 !important;
+    }
+
+    .form-label {
+        color: #00ADB5 !important;
+    }
+
+    .btn-primary {
+        background-color: #00ADB5;
+        border-color: #00ADB5;
+    }
+
+    .btn-primary:hover {
+        background-color: #008c94;
+        border-color: #008c94;
+    }
+
+    a {
+        color: #00ADB5 !important;
+    }
+
+    a:hover {
+        color: #008c94 !important;
+    }
+</style>
+
 <div class="container d-flex justify-content-center align-items-center">
-    <div class="card p-4 shadow-lg" style="width: 30vw; border-radius: 15px;">
-        <h2 class="text-center text-primary mb-4">Login</h2>
+    <div class="card p-4 shadow-lg" style="width: 30vw; border-radius: 15px; background-color: #393E46">
+        <h2 class="text-center mb-4 text-teal">Login</h2>
 
         <EditForm Model="loginModel" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
             <DataAnnotationsValidator />
@@ -39,10 +73,7 @@
 
 @code {
     private LogIn loginModel = new LogIn();
-
     private string errorMessage = string.Empty;
-
-    
 
     private async Task HandleValidSubmit()
     {
@@ -50,7 +81,7 @@
 
         if (user == null)
         {
-            errorMessage = $"Benutzer nicht gefunden. {loginModel.Email}"; 
+            errorMessage = $"Benutzer nicht gefunden. {loginModel.Email}";
             return;
         }
 
@@ -59,14 +90,14 @@
             errorMessage = "Falsches Passwort.";
             return;
         }
-        
+
         LogIn session = new LogIn
         {
             Id = user.Id,
             Username = user.Username,
             Email = user.Email
         };
-        LogInState.SetSession(session); 
+        LogInState.SetSession(session);
         Console.WriteLine("----------------------------------------------");
         Console.WriteLine($"Benutzer angemeldet: {user.Email}");
         Navigation.NavigateTo("/");
@@ -74,6 +105,6 @@
 
     private bool VerifyPassword(string enteredPassword, string storedHash)
     {
-        return enteredPassword == storedHash; 
+        return enteredPassword == storedHash;
     }
 }

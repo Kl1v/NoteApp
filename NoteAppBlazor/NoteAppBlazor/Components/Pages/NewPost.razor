@@ -7,7 +7,52 @@
 @inject LogInState LoginState
 @inject NavigationManager Navigation
 
-<PageTitle>Create Post</PageTitle>
+<PageTitle>Counter</PageTitle>
+
+<style>
+    .card {
+        background-color: #393E46;
+        color: white;
+        border: none;
+    }
+
+    .card-header {
+        background-color: #00ADB5 !important;
+        color: white !important;
+    }
+
+    .form-control {
+        background-color: #454b56;
+        color: white;
+        border-color: #5a6268;
+    }
+
+    .form-control:focus {
+        background-color: #454b56;
+        color: white;
+        border-color: #00ADB5;
+        box-shadow: 0 0 0 0.2rem rgba(0, 173, 181, 0.25);
+    }
+
+    .btn-primary {
+        background-color: #00ADB5;
+        border-color: #00ADB5;
+    }
+
+    .btn-primary:hover {
+        background-color: #008c94;
+        border-color: #008c94;
+    }
+
+    .form-label {
+        color: #00ADB5 !important;
+    }
+
+    select.form-control {
+        background-color: #454b56;
+        color: white;
+    }
+</style>
 
 @if (LoginState?.CurrentSession == null)
 {
@@ -19,7 +64,7 @@ else
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header">
                         <h3 class="mb-0">Create a New Post</h3>
                     </div>
                     <div class="card-body">
@@ -97,7 +142,7 @@ else
         {
             if (_newPost.Category == "Note")
             {
-                
+                _newPost.Deadline = DateTime.MinValue;
             }
             await PostRepositoryAsync.CreateAsync(_newPost);
             isSuccess = true;
